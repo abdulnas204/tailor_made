@@ -4,6 +4,7 @@ import 'package:tailor_made/models/contact.dart';
 import 'package:tailor_made/screens/homepage/_partials/helpers.dart';
 import 'package:tailor_made/widgets/_partials/mk_primary_button.dart';
 import 'package:tailor_made/widgets/theme_provider.dart';
+import 'package:time/time.dart';
 
 enum _CreateOptions { contacts, jobs }
 
@@ -23,7 +24,7 @@ class _CreateButtonState extends State<CreateButton> with SingleTickerProviderSt
   @override
   void initState() {
     super.initState();
-    controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 1200))..repeat(reverse: true);
+    controller = AnimationController(vsync: this, duration: 1200.milliseconds)..repeat(reverse: true);
   }
 
   @override

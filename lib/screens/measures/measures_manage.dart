@@ -11,6 +11,7 @@ import 'package:tailor_made/screens/measures/_partials/measures_slide_block.dart
 import 'package:tailor_made/widgets/_partials/mk_app_bar.dart';
 import 'package:tailor_made/widgets/_partials/mk_loading_spinner.dart';
 import 'package:tailor_made/widgets/_views/empty_result_view.dart';
+import 'package:time/time.dart';
 
 class MeasuresManagePage extends StatefulWidget {
   const MeasuresManagePage({Key key, @required this.userId}) : super(key: key);
@@ -28,10 +29,7 @@ class _MeasuresManagePageState extends State<MeasuresManagePage> with SnackBarPr
   @override
   void initState() {
     super.initState();
-    Future.delayed(
-      const Duration(seconds: 2),
-      () => showInSnackBar("Long-Press on any group to see more actions."),
-    );
+    Future.delayed(2.seconds, () => showInSnackBar("Long-Press on any group to see more actions."));
   }
 
   @override

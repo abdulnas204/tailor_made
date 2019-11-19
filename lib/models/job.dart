@@ -6,6 +6,7 @@ import 'package:tailor_made/models/main.dart';
 import 'package:tailor_made/models/payment.dart';
 import 'package:tailor_made/models/serializers.dart';
 import 'package:tailor_made/repository/models.dart';
+import 'package:time/time.dart';
 import 'package:uuid/uuid.dart';
 
 part 'job.g.dart';
@@ -25,7 +26,7 @@ abstract class JobModel with ModelInterface implements Built<JobModel, JobModelB
     ..pendingPayment = 0.0
     ..payments = BuiltList<PaymentModel>(<PaymentModel>[]).toBuilder()
     ..isComplete = false
-    ..dueAt = DateTime.now().add(Duration(days: 7))
+    ..dueAt = 1.weeks.fromNow
     ..measurements = BuiltMap<String, double>(<String, double>{}).toBuilder();
 
   @nullable

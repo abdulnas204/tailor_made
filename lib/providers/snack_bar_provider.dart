@@ -3,6 +3,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:tailor_made/constants/mk_colors.dart';
 import 'package:tailor_made/constants/mk_style.dart';
 import 'package:tailor_made/utils/mk_scale_util.dart';
+import 'package:time/time.dart';
 
 class SnackBarProvider {
   SnackBarProvider.of(BuildContext context)
@@ -64,7 +65,7 @@ class SnackBarProvider {
             Expanded(child: Text(value, style: mkFontMedium(14.0, color))),
           ],
         ),
-        duration: duration ?? const Duration(seconds: 5),
+        duration: duration ?? 5.seconds,
       ),
     );
   }
@@ -94,7 +95,7 @@ class _LoadingSnackBar extends SnackBar {
           key: key,
           backgroundColor: content == null ? Colors.white : (backgroundColor ?? kPrimaryColor),
           content: _RowBar(content: content, color: color),
-          duration: const Duration(days: 1),
+          duration: 1.days,
         );
 }
 

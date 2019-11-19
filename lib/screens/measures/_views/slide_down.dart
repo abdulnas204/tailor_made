@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:tailor_made/widgets/theme_provider.dart';
+import 'package:time/time.dart';
 
 class SlideDownItem extends StatefulWidget {
   const SlideDownItem({
@@ -107,7 +108,7 @@ class _SlideBody extends StatelessWidget {
       secondChild: child,
       sizeCurve: Curves.decelerate,
       crossFadeState: isExpanded ? CrossFadeState.showSecond : CrossFadeState.showFirst,
-      duration: const Duration(milliseconds: 250),
+      duration: 250.milliseconds,
     );
   }
 }

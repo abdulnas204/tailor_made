@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+import 'package:time/time.dart';
 
 class MkTouchableOpacity extends StatefulWidget {
   const MkTouchableOpacity({
@@ -35,8 +36,8 @@ class MkTouchableOpacity extends StatefulWidget {
 }
 
 class _MkTouchableOpacityState extends State<MkTouchableOpacity> with SingleTickerProviderStateMixin {
-  static const Duration kFadeOutDuration = Duration(milliseconds: 10);
-  static const Duration kFadeInDuration = Duration(milliseconds: 100);
+  static final Duration kFadeOutDuration = 10.milliseconds;
+  static final Duration kFadeInDuration = 100.milliseconds;
   Tween<double> _opacityTween;
 
   AnimationController _animationController;
@@ -48,7 +49,7 @@ class _MkTouchableOpacityState extends State<MkTouchableOpacity> with SingleTick
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(duration: const Duration(milliseconds: 200), value: 0.0, vsync: this);
+    _animationController = AnimationController(duration: 200.milliseconds, value: 0.0, vsync: this);
     _setTween();
   }
 

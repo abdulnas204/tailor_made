@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:time/time.dart';
 
 class ReviewModal extends StatelessWidget {
   const ReviewModal({Key key}) : super(key: key);
@@ -7,7 +8,7 @@ class ReviewModal extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Material(
-        animationDuration: const Duration(seconds: 5),
+        animationDuration: 5.seconds,
         borderRadius: BorderRadius.circular(4.0),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 32.0, horizontal: 16.0),

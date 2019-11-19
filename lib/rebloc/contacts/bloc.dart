@@ -8,6 +8,7 @@ import 'package:tailor_made/rebloc/common/actions.dart';
 import 'package:tailor_made/rebloc/contacts/actions.dart';
 import 'package:tailor_made/rebloc/contacts/sort_type.dart';
 import 'package:tailor_made/rebloc/extensions.dart';
+import 'package:time/time.dart';
 
 class ContactsBloc extends SimpleBloc<AppState> {
   @override
@@ -126,7 +127,7 @@ Stream<WareContext<AppState>> _makeSearch(WareContext<AppState> context) {
       .map<String>((String text) => text.trim())
       .distinct()
       .where((text) => text.length > 1)
-      .debounceTime(const Duration(milliseconds: 750))
+      .debounceTime(750.milliseconds)
       .map((text) => SearchSuccessContactAction(
             context.state.contacts.contacts
                 .where((contact) => contact.fullname.contains(RegExp(r'' + text + '', caseSensitive: false)))

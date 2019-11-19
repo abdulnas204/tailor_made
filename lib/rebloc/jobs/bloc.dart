@@ -9,6 +9,7 @@ import 'package:tailor_made/rebloc/common/actions.dart';
 import 'package:tailor_made/rebloc/extensions.dart';
 import 'package:tailor_made/rebloc/jobs/actions.dart';
 import 'package:tailor_made/rebloc/jobs/sort_type.dart';
+import 'package:time/time.dart';
 
 class JobsBloc extends SimpleBloc<AppState> {
   @override
@@ -116,7 +117,7 @@ Stream<WareContext<AppState>> _makeSearch(WareContext<AppState> context) {
       .map<String>((String text) => text.trim())
       .distinct()
       .where((text) => text.length > 1)
-      .debounceTime(const Duration(milliseconds: 750))
+      .debounceTime(750.milliseconds)
       .map((text) => SearchSuccessJobAction(
             context.state.jobs.jobs
                 .where((job) => job.name.contains(RegExp(r'' + text + '', caseSensitive: false)))

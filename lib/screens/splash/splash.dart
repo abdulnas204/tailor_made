@@ -15,6 +15,7 @@ import 'package:tailor_made/utils/ui/app_version_builder.dart';
 import 'package:tailor_made/utils/ui/mk_status_bar.dart';
 import 'package:tailor_made/widgets/_partials/mk_loading_spinner.dart';
 import 'package:tailor_made/widgets/theme_provider.dart';
+import 'package:time/time.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key key, @required this.isColdStart}) : super(key: key);
@@ -176,7 +177,7 @@ class _ContentState extends State<_Content> {
       final message = MkStrings.genericError(e, Dependencies.di().session.isDev);
 
       if (message.isNotEmpty) {
-        SnackBarProvider.of(context).show(message, duration: const Duration(milliseconds: 3500));
+        SnackBarProvider.of(context).show(message, duration: 3500.milliseconds);
       }
 
       await Dependencies.di().accounts.signout();
